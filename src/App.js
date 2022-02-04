@@ -6,7 +6,7 @@ import News from "./pages/News";
 
 function App() {
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row bg-gray-200">
       <SideNav />
       <Routes>
         <Route path="/" element={<Home />} />
