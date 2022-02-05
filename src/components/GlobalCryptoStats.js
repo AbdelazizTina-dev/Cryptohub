@@ -1,6 +1,6 @@
 const GlobalCryptoStats = () => {
   return (
-    <div className="">
+    <div>
       <p className="text-4xl font-semibold text-black pb-4">
         Global Crypto Stats
       </p>
