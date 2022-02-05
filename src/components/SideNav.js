@@ -36,7 +36,7 @@ const SideNav = () => {
   ];
 
   return (
-    <nav className="flex flex-col w-80 h-screen bg-sky-900 justify-start py-4">
+    <nav className="flex flex-col w-1/5 bg-sky-900 justify-start pt-4 px-4">
       {links.map((link) => (
         <div key={link.id} className="flex flex-row items-center hover:bg-transparent">
           <FontAwesomeIcon

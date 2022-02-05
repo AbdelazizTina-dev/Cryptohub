@@ -6,8 +6,8 @@ import News from "./pages/News";
 
 function App() {
   return (
-    <div className="flex flex-row bg-gray-200">
-      <SideNav />
+    <div className="h-auto flex flex-row bg-gray-200">
+      <SideNav/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="news" element={<News />} />

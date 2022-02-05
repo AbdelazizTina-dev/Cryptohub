@@ -1,6 +1,6 @@
 const CryptoItem = () => {
   return (
-    <div className="bg-white w-1/5 h-1/4 divide-y divide-gray-200 transition-all duration-700 ease-out hover:shadow-2xl">
+    <div className="bg-white divide-y divide-gray-200 transition-all duration-700 ease-out hover:shadow-2xl">
       <div className="flex justify-between items-center p-4 ">
         <p className="text-lg font-medium">1. Bitcoin</p>
         <img
