@@ -1,5 +1,5 @@
-import GlobalCryptoStats from "../components/GlobalCryptoStats";
-import TopCrypto from "../components/TopCrypto";
+import GlobalCryptoStats from "../components/Crypto/GlobalCryptoStats";
+import TopCrypto from "../components/Crypto/TopCrypto";
 
 const Home = () => {
   return (

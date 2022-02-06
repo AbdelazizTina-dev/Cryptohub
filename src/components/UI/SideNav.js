@@ -40,7 +40,7 @@ const SideNav = () => {
       {links.map((link) => (
         <div
           key={link.id}
-          className="flex flex-row items-center hover:bg-transparent"
+          className="flex flex-row items-center hover:bg-gray-400"
         >
           <FontAwesomeIcon
             className="mx-4"

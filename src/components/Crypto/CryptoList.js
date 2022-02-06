@@ -1,5 +1,5 @@
 import CryptoItem from "./CryptoItem"
-import Search from "./Search"
+import Search from "../UI/Search"
 
 
 const CryptoList = () => {

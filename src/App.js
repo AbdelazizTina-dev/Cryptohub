@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import SideNav from "./components/SideNav";
+import SideNav from "./components/UI/SideNav";
 import Currencies from "./pages/Currencies";
+import CurrencyDetails from "./pages/CurrencyDetails";
 import Home from "./pages/Home";
 import News from "./pages/News";
 
@@ -12,7 +13,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="news" element={<News />} />
-        <Route path="crypto" element={<Currencies />} />
+        <Route path="crypto" element={<Currencies />}/>
+        <Route path="crypto/:cryptoId" element={<CurrencyDetails />} />
       </Routes>
     </div>
   );
