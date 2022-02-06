@@ -1,3 +1,5 @@
+import Info from "../Details/Info";
+import Links from "../Details/Links";
 import OtherStats from "../Details/OtherStats";
 import ValueStats from "../Details/ValueStats";
 
@@ -14,9 +16,11 @@ const CryptoDetail = (props) => {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 grid-rows-2">
+      <div className="grid grid-cols-2">
         <ValueStats/>
         <OtherStats/>
+        <Info/>
+        <Links/>
       </div>
     </div>
   );
