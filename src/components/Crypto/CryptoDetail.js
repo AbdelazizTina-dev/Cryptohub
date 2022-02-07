@@ -2,6 +2,7 @@ import Info from "../Details/Info";
 import Links from "../Details/Links";
 import OtherStats from "../Details/OtherStats";
 import ValueStats from "../Details/ValueStats";
+import Chart from "./Chart";
 
 const CryptoDetail = (props) => {
   return (
@@ -15,7 +16,7 @@ const CryptoDetail = (props) => {
           cap and supply.
         </p>
       </div>
-
+      <Chart/>
       <div className="grid grid-cols-2">
         <ValueStats/>
         <OtherStats/>
