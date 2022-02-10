@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CryptoItem from "./CryptoItem";
 
 const TopCrypto = () => {
+  const coins = useSelector((state) => state.coins.data.coins);
+
   return (
     <div>
       <div className="flex justify-between items-center pb-4">
@@ -12,11 +15,21 @@ const TopCrypto = () => {
           Show More
         </Link>
       </div>
-      <div className="grid grid-cols-4 grid-rows-3 gap-6">
-        {[...Array(10).keys()].map((i) => (
-          <CryptoItem key={i} />
-        ))}
-      </div>
+      {coins !== undefined && (
+        <div className="grid grid-cols-4 grid-rows-3 gap-6">
+          {coins.slice(0, 10).map((i) => (
+            <CryptoItem
+              key={i.uuid}
+              rank={i.rank}
+              name={i.name}
+              price={i.price}
+              mCap={i.marketCap}
+              dChange={i.change}
+              iconUrl={i.iconUrl}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
