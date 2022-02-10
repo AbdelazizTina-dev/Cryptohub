@@ -13,7 +13,6 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("yo I am inside effect of app");
     dispatch(fetchCoins());
   }, [dispatch]);
 
@@ -24,7 +23,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="news" element={<News />} />
         <Route path="crypto" element={<Currencies />} />
-        <Route path="crypto/:cryptoId" element={<CurrencyDetails />} />
+        <Route path="crypto/:uuid" element={<CurrencyDetails />} />
       </Routes>
     </div>
   );

@@ -1,8 +1,16 @@
 import millify from "millify";
+import { useNavigate } from "react-router-dom";
 
-const CryptoItem = ({ rank, name, price, mCap, dChange, iconUrl }) => {
+const CryptoItem = ({ uuid, rank, name, price, mCap, dChange, iconUrl }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="bg-white divide-y divide-gray-200 transition-all duration-700 ease-out hover:shadow-2xl">
+    <div
+      onClick={() => {
+        navigate(`/crypto/${uuid}`);
+      }}
+      className="bg-white hover:cursor-pointer divide-y divide-gray-200 transition-all duration-700 ease-out hover:shadow-2xl"
+    >
       <div className="flex justify-between items-center p-4 ">
         <p className="text-lg font-medium">
           {rank}. {name}

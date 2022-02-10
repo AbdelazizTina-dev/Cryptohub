@@ -20,6 +20,7 @@ const TopCrypto = () => {
           {coins.slice(0, 10).map((i) => (
             <CryptoItem
               key={i.uuid}
+              uuid={i.uuid}
               rank={i.rank}
               name={i.name}
               price={i.price}

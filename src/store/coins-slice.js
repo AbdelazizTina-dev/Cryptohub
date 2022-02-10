@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const coinsSlice = createSlice({
-  name: "coins",
+  name: "Coins List",
   initialState: {
     data: {},
   },
@@ -31,10 +31,7 @@ export const fetchCoins = () => {
         throw new Error("something went wrong when fetching coins data");
 
       const data = await response.json();
-
-      console.log("sup from thunk");
-      console.log(data);
-
+        
       dispatch(coinsActions.setData(data.data));
     };
 

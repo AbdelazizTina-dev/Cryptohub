@@ -15,6 +15,7 @@ const CryptoList = () => {
           {coins.map((i) => (
             <CryptoItem
               key={i.uuid}
+              uuid={i.uuid}
               rank={i.rank}
               name={i.name}
               price={i.price}
