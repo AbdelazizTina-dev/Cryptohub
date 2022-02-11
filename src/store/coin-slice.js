@@ -3,7 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const coinSlice = createSlice({
   name: "Coin Info",
   initialState: {
-    data: {},
+    data: {
+      //set a prototype object like the response
+    },
   },
   reducers: {
     setData: (state, action) => {
@@ -28,16 +30,17 @@ export const fetchCoin = (uuid) => {
         }
       );
 
-      if (!response.ok) throw new Error("Something went wrong while fetching coin data")
+      if (!response.ok)
+        throw new Error("Something went wrong while fetching coin data");
 
-      const responseData = await response.json()
+      const responseData = await response.json();
 
-      dispatch(coinActions.setData(responseData.data.coin))
+      dispatch(coinActions.setData(responseData.data.coin));
     };
 
-
-    sendRequest().catch((error) => console.log("Error from coin thunk: " + error))
-
+    sendRequest().catch((error) =>
+      console.log("Error from coin thunk: " + error)
+    );
   };
 };
 

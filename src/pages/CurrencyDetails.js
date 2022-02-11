@@ -15,14 +15,10 @@ const CurrencyDetails = () => {
       dispatch(fetchCoin(uuid))
     },[dispatch,uuid])
 
-    const coin = useSelector((state) => state.coin.data)
-
-    console.log("sup from details page")
-    console.log(coin)
 
     return(
         <div className="w-full h-full p-6 ml-96">
-            <CryptoDetail coin={coin}/>
+            <CryptoDetail/>
         </div>
     );
 }

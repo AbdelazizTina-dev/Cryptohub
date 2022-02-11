@@ -1159,16 +1159,12 @@ const DUMMY_HISTORY = [
 ];
 
 const Chart = () => {
-
   const getSelectedDuration = (duration) => {
-    console.log("yo this is from chart, this is what we got bossman " + duration)
-  }
+  };
 
   const labels = DUMMY_HISTORY.map((history) =>
     format(new Date(DUMMY_HISTORY[0].timestamp * 1000), "HH:mm")
   );
-
-
 
   const data = {
     labels,
@@ -1185,13 +1181,18 @@ const Chart = () => {
 
   return (
     <div className="w-full">
-      <Dropdown options={["24h","3h","7d","30d","3m","1y","3y","5y"]} sendChangeToParent={getSelectedDuration}/>
+      <Dropdown
+        options={["24h", "3h", "7d", "30d", "3m", "1y", "3y", "5y"]}
+        sendChangeToParent={getSelectedDuration}
+      />
       <div className="flex flex-row items-baseline">
-        <p className="text-blue-600 font-semibold text-4xl">Bitcoin Price Chart</p>
+        <p className="text-blue-600 font-semibold text-4xl">
+          Bitcoin Price Chart
+        </p>
         <p className="ml-auto mr-6 font-bold text-lg">Change: 13.37%</p>
         <p className="font-bold text-lg">Current Bitcoin Price: $ 48.6K</p>
       </div>
-      <Line className="grid place-items-center" data={data}/>
+      <Line className="grid place-items-center" data={data} />
     </div>
   );
 };

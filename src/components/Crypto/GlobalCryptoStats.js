@@ -3,7 +3,7 @@ import millify from "millify";
 
 const GlobalCryptoStats = () => {
   const stats = useSelector((state) => state.coins.data.stats);
-  
+
   return (
     <div>
       <p className="text-4xl font-semibold text-black pb-4">

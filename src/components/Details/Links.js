@@ -5,7 +5,7 @@ const Links = ({name, links}) => {
       <p className="text-blue-600 font-semibold text-2xl pb-4">{name} Links</p>
       <ul className="divide-y divide-gray-300">
         {links.map((link) => (
-          <li className="flex flex-row items-center px-4 py-6 hover:bg-gray-100">
+          <li key={links.indexOf(link)} className="flex flex-row items-center px-4 py-6 hover:bg-gray-100">
             <p className="text-lg capitalize ">{link.type}</p>
             <a
               href={link.url}
