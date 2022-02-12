@@ -55,7 +55,7 @@ const OtherStats = ({name, marketsNumber, exchNumber, isSupplyApproved, totalSup
             fixedWidth
           />
           <p>Total Supply</p>
-          <p className="ml-auto pr-3 font-bold">$ {millify(totalSupply,{precision:2})}</p>
+          {totalSupply && <p className="ml-auto pr-3 font-bold">$ {millify(totalSupply,{precision:2})}</p>}
         </li>
         <li className="flex flex-row items-center px-4 py-6 hover:bg-gray-100">
           <FontAwesomeIcon

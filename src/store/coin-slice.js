@@ -18,10 +18,9 @@ export const fetchCoin = (uuid) => {
   return async (dispatch) => {
     const sendRequest = async () => {
       const response = await fetch(
-        `https://coinranking1.p.rapidapi.com/coin/${uuid}`,
+        `https://coinranking1.p.rapidapi.com/coin/${uuid}?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h`,
         {
           method: "GET",
-          params: { referenceCurrencyUuid: "yhjMzLPhuIDl", timePeriod: "24h" },
           headers: {
             "x-rapidapi-host": "coinranking1.p.rapidapi.com",
             "x-rapidapi-key":

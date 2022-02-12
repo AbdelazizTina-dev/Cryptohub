@@ -22,7 +22,7 @@ const CryptoDetail = () => {
               market cap and supply.
             </p>
           </div>
-          <Chart />
+          <Chart name={coin.name} price={coin.price} uuid={coin.uuid} />
           <div className="grid grid-cols-2">
             <ValueStats
               name={coin.name}
