@@ -4,11 +4,22 @@ const coinsSlice = createSlice({
   name: "Coins List",
   initialState: {
     data: {},
+    filteredData: [],
   },
   reducers: {
     setData: (state, action) => {
       state.data = action.payload;
+      state.filteredData = action.payload.coins;
     },
+    filterByName: (state, action) => {
+      const coinsList = state.data.coins;
+      state.filteredData = coinsList.filter((i) =>
+        i.name.toLowerCase().startsWith(action.payload.toLowerCase())
+      );
+    },
+    resetFilter: (state) => {
+      state.filteredData = state.data.coins
+    }
   },
 });
 
@@ -31,7 +42,7 @@ export const fetchCoins = () => {
         throw new Error("something went wrong when fetching coins data");
 
       const data = await response.json();
-        
+
       dispatch(coinsActions.setData(data.data));
     };
 

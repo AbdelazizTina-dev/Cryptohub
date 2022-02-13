@@ -1,31 +1,40 @@
 import CryptoItem from "./CryptoItem";
 import Search from "../UI/Search";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { coinsActions } from "../../store/coins-slice";
 
 const CryptoList = () => {
-  const coins = useSelector((state) => state.coins.data.coins);
+  const dispatch = useDispatch();
+
+  const filteredCoins = useSelector((state) => state.coins.filteredData);
+
+  const getSearchedText = (text) => {
+    if (text.trim() === "") dispatch(coinsActions.resetFilter);
+
+    dispatch(coinsActions.filterByName(text));
+  };
 
   return (
     <div>
       <div className="pb-4">
-        <Search />
+        <Search onTyping={getSearchedText} />
       </div>
-      {coins !== undefined && (
-        <div className="grid grid-cols-4 gap-6">
-          {coins.map((i) => (
-            <CryptoItem
-              key={i.uuid}
-              uuid={i.uuid}
-              rank={i.rank}
-              name={i.name}
-              price={i.price}
-              mCap={i.marketCap}
-              dChange={i.change}
-              iconUrl={i.iconUrl}
-            />
-          ))}
-        </div>
-      )}
+
+      <div className="grid grid-cols-4 gap-6">
+        {filteredCoins.map((i) => (
+          <CryptoItem
+            key={i.uuid}
+            uuid={i.uuid}
+            rank={i.rank}
+            name={i.name}
+            price={i.price}
+            mCap={i.marketCap}
+            dChange={i.change}
+            iconUrl={i.iconUrl}
+          />
+        ))}
+      </div>
     </div>
   );
 };

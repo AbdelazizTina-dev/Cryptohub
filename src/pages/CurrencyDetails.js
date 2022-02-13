@@ -17,7 +17,7 @@ const CurrencyDetails = () => {
 
 
     return(
-        <div className="w-full h-full p-6 ml-96">
+        <div className="h-full">
             <CryptoDetail/>
         </div>
     );

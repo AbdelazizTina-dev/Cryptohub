@@ -3,7 +3,7 @@ import TopCrypto from "../components/Crypto/TopCrypto";
 
 const Home = () => {
   return (
-    <div className="w-full p-6 ml-96">
+    <div>
       <GlobalCryptoStats />
       <TopCrypto />
     </div>

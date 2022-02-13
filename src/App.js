@@ -19,12 +19,14 @@ function App() {
   return (
     <div className="h-auto flex flex-row bg-gray-200">
       <SideNav />
+      <div className="w-full p-6 ml-96 h-full">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="news" element={<News />} />
         <Route path="crypto" element={<Currencies />} />
         <Route path="crypto/:uuid" element={<CurrencyDetails />} />
       </Routes>
+      </div>
     </div>
   );
 }
