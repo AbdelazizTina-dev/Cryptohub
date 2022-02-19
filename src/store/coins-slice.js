@@ -16,9 +16,6 @@ const coinsSlice = createSlice({
       state.filteredData = coinsList.filter((i) =>
         i.name.toLowerCase().startsWith(action.payload.toLowerCase())
       );
-    },
-    resetFilter: (state) => {
-      state.filteredData = state.data.coins
     }
   },
 });

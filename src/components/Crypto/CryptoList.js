@@ -10,8 +10,6 @@ const CryptoList = () => {
   const filteredCoins = useSelector((state) => state.coins.filteredData);
 
   const getSearchedText = (text) => {
-    if (text.trim() === "") dispatch(coinsActions.resetFilter);
-
     dispatch(coinsActions.filterByName(text));
   };
 

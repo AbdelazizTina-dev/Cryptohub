@@ -35,7 +35,7 @@ const Chart = ({ name, price, uuid }) => {
         data: priceHistory.map((history) => history.price),
         backgroundColor: ["rgb(85, 126, 173)"],
         borderColor: ["rgb(8, 56, 168)"],
-        borderWidth: 1,
+        borderWidth: 2,
       },
     ],
   };
