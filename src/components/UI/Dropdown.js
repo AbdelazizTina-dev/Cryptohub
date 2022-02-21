@@ -1,8 +1,7 @@
 const Dropdown = ({ options, sendChangeToParent }) => {
-
   const selectHandler = (e) => {
-      sendChangeToParent(e.target.value)
-  }
+    sendChangeToParent(e.target.value);
+  };
 
   return (
     <div className="relative inline-flex m-4">
@@ -17,9 +16,14 @@ const Dropdown = ({ options, sendChangeToParent }) => {
           fillRule="nonzero"
         />
       </svg>
-      <select onChange={selectHandler} className="border border-gray-300 text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-        {options.map((option) => (
-          <option key={option} value={option}>{option}</option>
+      <select
+        onChange={selectHandler}
+        className="border border-gray-300 text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
+      >
+        {options?.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
         ))}
       </select>
     </div>
