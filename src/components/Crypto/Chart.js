@@ -13,7 +13,7 @@ const Chart = ({ name, price, uuid }) => {
   const [timePeriod, setTimePeriod] = useState("24h");
 
   const getSelectedTimePeriod = (selTimePeriod) => {
-    setTimePeriod(selTimePeriod);
+    setTimePeriod(selTimePeriod.value);
   };
 
   useEffect(() => {
@@ -40,10 +40,21 @@ const Chart = ({ name, price, uuid }) => {
     ],
   };
 
+  const periodOptions = [
+    { value: "24h", label: "24h" },
+    { value: "3h", label: "3h" },
+    { value: "7d", label: "7d" },
+    { value: "30d", label: "30d" },
+    { value: "3m", label: "3m" },
+    { value: "1y", label: "1y" },
+    { value: "3y", label: "3y" },
+    { value: "5y", label: "5y" },
+  ];
+
   return (
     <div className="w-full">
       <Dropdown
-        options={["24h", "3h", "7d", "30d", "3m", "1y", "3y", "5y"]}
+        options={periodOptions}
         sendChangeToParent={getSelectedTimePeriod}
       />
       <div className="flex flex-row items-baseline">

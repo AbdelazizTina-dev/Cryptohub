@@ -14,7 +14,8 @@ const News = () => {
   const [searchQuery, setSearchQuery] = useState("Bitcoin");
 
   const getSelectedQuery = (query) => {
-    setSearchQuery(query);
+    console.log(query);
+    setSearchQuery(query.value);
   };
 
   useEffect(() => {
@@ -24,10 +25,13 @@ const News = () => {
   if (isFetching)
     return <p className="text-4xl font-bold text-red-400">Loading....</p>;
 
+
+  const dropdownOptions = coins?.slice(0, 10).map((coin) => ({value: coin.name, label:coin.name}))
+
   return (
     <div>
       <Dropdown
-        options={coins?.slice(0, 10).map((coin) => coin.name)}
+        options={dropdownOptions}
         sendChangeToParent={getSelectedQuery}
       />
       <div className="grid grid-cols-3 gap-8">
