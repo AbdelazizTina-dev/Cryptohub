@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NewsItem from "../components/Crypto/NewsItem";
 import Dropdown from "../components/UI/Dropdown";
+import LoadingSpinner from "../components/UI/LoadingSpinner";
 import { fethcNews } from "../store/news-slice";
 
 const News = () => {
@@ -23,7 +24,7 @@ const News = () => {
   }, [dispatch, searchQuery]);
 
   if (isFetching)
-    return <p className="text-4xl font-bold text-red-400">Loading....</p>;
+    return <LoadingSpinner/>
 
 
   const dropdownOptions = coins?.slice(0, 10).map((coin) => ({value: coin.name, label:coin.name}))
@@ -39,8 +40,10 @@ const News = () => {
           <NewsItem
             key={n.name}
             title={n.name}
+            url={n.url}
             previewImg={n.image?.contentUrl}
             preview={n.description}
+            date={n.datePublished}
             providerName={n.provider[0]?.name}
             providerLogo={n.provider[0]?.image?.thumbnail?.contentUrl}
           />

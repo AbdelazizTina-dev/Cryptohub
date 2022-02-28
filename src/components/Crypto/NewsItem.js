@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { parseISO, formatDistanceToNow } from 'date-fns'
 
 const NewsItem = ({
   title,
+  url,
   previewImg,
+  date,
   preview,
   providerName,
   providerLogo,
@@ -12,20 +15,24 @@ const NewsItem = ({
 
   const [isHovered, setIsHovered] = useState(false);
 
+  const d = parseISO(date)
+
+  const timePeriod = formatDistanceToNow(d)
+
   return (
     <motion.div
-      whileHover={{ scale: 0.9, rotateX: 360 , transition:{duration: 0.8}}}
+      whileHover={{ scale: 0.9, transition:{duration: 0.8}}}
       className="w-full h-full bg-white flex"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {isHovered && (
-        <button
-          type="button"
-          class="w-fit backdrop-blur-sm m-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center"
+        <a
+          href={url}
+          className="w-fit backdrop-blur-sm m-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center"
         >
           Go To Article
-        </button>
+        </a>
       )}
       {!isHovered && (
         <div className="w-full h-full bg-white p-6 flex flex-col">
@@ -45,7 +52,7 @@ const NewsItem = ({
               alt="news provider"
             />
             <p className="font-semibold mr-auto">{providerName}</p>
-            <p className="text-gray-600">31 mins ago</p>
+            <p className="text-gray-600">{timePeriod} ago</p>
           </div>
         </div>
       )}
