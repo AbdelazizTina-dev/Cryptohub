@@ -15,7 +15,6 @@ const News = () => {
   const [searchQuery, setSearchQuery] = useState("Bitcoin");
 
   const getSelectedQuery = (query) => {
-    console.log(query);
     setSearchQuery(query.value);
   };
 

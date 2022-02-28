@@ -1,6 +1,7 @@
 import millify from "millify";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import LoadingSpinner from "../components/UI/LoadingSpinner";
 import { fethcExchanges } from "../store/exchanges-slice";
 
 const Exchanges = () => {
@@ -14,7 +15,7 @@ const Exchanges = () => {
   }, [dispatch]);
 
   if (isFetching)
-    return <p className="text-4xl font-bold text-red-400">Loading....</p>;
+    return <LoadingSpinner/>;
 
   return (
     <div className="grid grid-rows-auto">
