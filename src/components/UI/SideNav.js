@@ -6,37 +6,41 @@ import {
   faNewspaper,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import logo from '../../logo.png'
+
+export const links = [
+  {
+    id: 1,
+    name: "Home",
+    path: "/",
+    icon: faHouseDamage,
+  },
+  {
+    id: 2,
+    name: "Crypto",
+    path: "/crypto",
+    icon: faDollarSign,
+  },
+  {
+    id: 3,
+    name: "Exchanges",
+    path: "/exchanges",
+    icon: faCashRegister,
+  },
+  {
+    id: 4,
+    name: "News",
+    path: "/news",
+    icon: faNewspaper,
+  },
+];
 
 const SideNav = () => {
-  const links = [
-    {
-      id: 1,
-      name: "Home",
-      path: "/",
-      icon: faHouseDamage,
-    },
-    {
-      id: 2,
-      name: "Crypto",
-      path: "/crypto",
-      icon: faDollarSign,
-    },
-    {
-      id: 3,
-      name: "Exchanges",
-      path: "/exchanges",
-      icon: faCashRegister,
-    },
-    {
-      id: 4,
-      name: "News",
-      path: "/news",
-      icon: faNewspaper,
-    },
-  ];
+
 
   return (
-    <nav className="flex flex-col h-full w-96 bg-sky-900 justify-start pt-4 px-4 z-1 fixed top-0 left-0 overflow-y-hidden">
+    <nav className="flex flex-col h-full w-96 bg-gray-600 justify-start pt-4 px-4 z-1 fixed top-0 left-0 overflow-y-hidden">
+        <img src={logo} alt="logo" className="scale-75"/>
       {links.map((link) => (
         <div
           key={link.id}
