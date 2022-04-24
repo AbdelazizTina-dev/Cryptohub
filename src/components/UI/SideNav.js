@@ -39,12 +39,12 @@ const SideNav = () => {
 
 
   return (
-    <nav className="flex flex-col h-full w-96 bg-gray-600 justify-start pt-4 px-4 z-1 fixed top-0 left-0 overflow-y-hidden">
-        <img src={logo} alt="logo" className="scale-75"/>
+    <nav className="flex flex-row lg:flex-col h-full w-full lg:w-1/5 lg:min-h-screen lg:sticky lg:top-0 lg:left-0 bg-gray-600 lg:pt-4">
+        <img src={logo} alt="logo" className="scale-75 hidden lg:inline"/>
       {links.map((link) => (
         <div
           key={link.id}
-          className="flex flex-row items-center hover:bg-gray-400"
+          className="flex flex-row basis-1/4 lg:basis-0 items-center hover:bg-gray-400"
         >
           <FontAwesomeIcon
             className="mx-4"
@@ -54,7 +54,7 @@ const SideNav = () => {
             fixedWidth
           />
           <Link
-            className="py-4 text-white font-semibold text-xl w-5/6"
+            className="p-4 text-white font-semibold text-center lg:text-left text-xl w-5/6"
             to={link.path}
           >
             {link.name}

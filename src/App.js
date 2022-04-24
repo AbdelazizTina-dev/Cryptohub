@@ -19,9 +19,9 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="flex flex-row bg-gray-200">
+    <div className="flex flex-col lg:flex-row bg-gray-200">
       <SideNav />
-      <div className="w-full ml-96 min-h-screen">
+      <div className="w-full min-h-screen">
         <div className="p-6">
           <Routes>
             <Route path="/" element={<Home />} />
