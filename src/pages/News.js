@@ -34,7 +34,7 @@ const News = () => {
         options={dropdownOptions}
         sendChangeToParent={getSelectedQuery}
       />
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8">
         {news.map((n) => (
           <NewsItem
             key={n.name}

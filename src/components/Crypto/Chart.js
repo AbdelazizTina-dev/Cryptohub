@@ -52,13 +52,13 @@ const Chart = ({ name, price, uuid }) => {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-11/12 mx-auto">
       <Dropdown
         options={periodOptions}
         sendChangeToParent={getSelectedTimePeriod}
       />
       <div className="flex flex-row items-baseline">
-        <p className="text-blue-600 font-semibold text-4xl">
+        <p className="text-blue-600 font-semibold text-2xl lg:text-4xl">
           {name} Price Chart
         </p>
         <p className="ml-auto mr-6 font-bold text-lg">Change: {change}%</p>

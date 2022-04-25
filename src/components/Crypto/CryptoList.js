@@ -1,7 +1,6 @@
 import CryptoItem from "./CryptoItem";
 import Search from "../UI/Search";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
 import { coinsActions } from "../../store/coins-slice";
 
 const CryptoList = () => {
@@ -19,7 +18,7 @@ const CryptoList = () => {
         <Search onTyping={getSearchedText} />
       </div>
 
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {filteredCoins.map((i) => (
           <CryptoItem
             key={i.uuid}

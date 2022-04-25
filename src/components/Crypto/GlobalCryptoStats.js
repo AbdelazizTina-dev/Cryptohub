@@ -6,7 +6,7 @@ const GlobalCryptoStats = () => {
 
   return (
     <div>
-      <p className="text-4xl font-semibold text-black pb-4">
+      <p className="text-2xl lg:text-4xl font-semibold text-black pb-4">
         Global Crypto Stats
       </p>
       {stats !== undefined && (

@@ -20,11 +20,12 @@ const NewsItem = ({
   const timePeriod = formatDistanceToNow(d)
 
   return (
+    /* Bug to fix: handle hover action on sm screens */
     <motion.div
       whileHover={{ scale: 0.9, transition:{duration: 0.8}}}
       className="w-full h-full bg-white flex"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
     >
       {isHovered && (
         <a
